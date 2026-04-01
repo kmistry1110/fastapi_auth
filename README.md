@@ -1,6 +1,11 @@
 # fastapi_auth
 Auth APIs for FastApi App
 
+# Database support (db_type)
+postgres
+mysql
+sqlite
+mongodb
 
 ## How to use it in your FastAPI App
 
