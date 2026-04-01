@@ -1,4 +1,4 @@
-# FastAPI Auth Kit 🔐
+# FastAPI Auth 🔐
 
 Production-ready authentication system for FastAPI with async support, JWT, refresh tokens, and pluggable database backends.
 
@@ -26,14 +26,16 @@ Production-ready authentication system for FastAPI with async support, JWT, refr
 ## 📦 Installation
 
 ```bash
-pip install fastapi-auth-kit
+pip install fastapi-auth[<db>]
 ```
 
 ### With database support
 
 ```bash
-pip install fastapi-auth-kit[postgres]
-pip install fastapi-auth-kit[mongodb]
+pip install fastapi-auth[postgres]
+pip install fastapi-auth[mysql]
+pip install fastapi-auth[mongodb]
+pip install fastapi-auth[sqlite]
 ```
 
 ---
@@ -43,7 +45,7 @@ pip install fastapi-auth-kit[mongodb]
 ### Step 1: How to initiate auth on startup
 ```python
 from fastapi import FastAPI
-from fastapi_auth_kit import init_auth, AuthConfig
+from fastapi_auth_ import init_auth, AuthConfig
 
 app = FastAPI()
 
