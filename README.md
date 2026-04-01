@@ -85,7 +85,7 @@ async def me(user=Depends(get_current_user)):
 | POST /auth/logout   | Logout and revoke token |
 | GET /auth/me        | Get current user        |
 
-![Swagger UI](docs/image.png)
+![Swagger UI](https://raw.githubusercontent.com/kmistry1110/fastapi_auth/refs/heads/main/docs/image.png)
 ---
 
 ## 🧪 Example
