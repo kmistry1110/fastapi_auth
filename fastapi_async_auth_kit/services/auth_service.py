@@ -1,5 +1,5 @@
 from fastapi import HTTPException, status
-from fastapi_auth.core.security import *
+from fastapi_async_auth_kit.core.security import *
 
 class AuthService:
     def __init__(self, repo, secret):

@@ -26,16 +26,16 @@ Production-ready authentication system for FastAPI with async support, JWT, refr
 ## 📦 Installation
 
 ```bash
-pip install fastapi-auth[<db>]
+pip install "fastapi-async-auth-kit[<db>]"
 ```
 
 ### With database support
 
 ```bash
-pip install fastapi-auth[postgres]
-pip install fastapi-auth[mysql]
-pip install fastapi-auth[mongodb]
-pip install fastapi-auth[sqlite]
+pip install "fastapi-async-auth-kit[postgres]"
+pip install "fastapi-async-auth-kit[mysql]"
+pip install "fastapi-async-auth-kit[mongodb]"
+pip install "fastapi-async-auth-kit[sqlite]"
 ```
 
 ---
