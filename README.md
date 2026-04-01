@@ -85,6 +85,7 @@ async def me(user=Depends(get_current_user)):
 | POST /auth/logout   | Logout and revoke token |
 | GET /auth/me        | Get current user        |
 
+![Swagger UI](docs/image.png)
 ---
 
 ## 🧪 Example
@@ -167,6 +168,8 @@ Database (Async)
 ## 🤝 Contributing
 
 Pull requests are welcome. For major changes, open an issue first.
+
+Source Code: https://github.com/kmistry1110/fastapi_auth
 
 ---
 
