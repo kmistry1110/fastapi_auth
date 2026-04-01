@@ -1,7 +1,7 @@
-from fastapi_auth.db.factory import get_repo
-from fastapi_auth.services.auth_service import AuthService
-from fastapi_auth.api.auth import router
-from fastapi_auth.dependencies import auth
+from fastapi_async_auth_kit.db.factory import get_repo
+from fastapi_async_auth_kit.services.auth_service import AuthService
+from fastapi_async_auth_kit.api.auth import router
+from fastapi_async_auth_kit.dependencies import auth
 
 async def init_auth(app, config):
     repo = await get_repo(config)

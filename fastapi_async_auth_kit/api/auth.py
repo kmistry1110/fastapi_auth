@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Request, Depends
-from fastapi_auth.schemas.auth import (
+from fastapi_async_auth_kit.schemas.auth import (
     RegisterRequest,
     LoginRequest,
     RefreshRequest,
     TokenResponse
 )
-from fastapi_auth.dependencies.auth import get_current_user
+from fastapi_async_auth_kit.dependencies.auth import get_current_user
 
 router = APIRouter()
 

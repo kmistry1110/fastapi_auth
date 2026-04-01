@@ -1,7 +1,7 @@
 import pytest
 from httpx import AsyncClient
 from fastapi import FastAPI
-from fastapi_auth import init_auth, AuthConfig
+from fastapi_async_auth_kit import init_auth, AuthConfig
 
 
 @pytest.mark.asyncio

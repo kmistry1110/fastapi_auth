@@ -1,8 +1,10 @@
 [project]
-name = "fastapi-auth"
-version = "0.1.0"
-description = "Async FastAPI auth with JWT, refresh tokens, logout"
+name = "fastapi-async-auth-kit"
+version = "0.3.0"
+description = "Production-ready FastAPI auth system with JWT, refresh tokens, and async DB support"
+readme = "README.md"
 authors = [{ name="Keyurkumar", email="kmistry1110@gmail.com" }]
+license = "MIT"
 requires-python = ">=3.8"
 
 dependencies = [
@@ -25,4 +27,4 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["fastapi_auth*"]
+include = ["fastapi_async_auth_kit*"]

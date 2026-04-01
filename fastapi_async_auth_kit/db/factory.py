@@ -1,5 +1,5 @@
-from fastapi_auth.db.sqlalchemy_repo import SQLRepo
-from fastapi_auth.db.mongo_repo import MongoRepo
+from fastapi_async_auth_kit.db.sqlalchemy_repo import SQLRepo
+from fastapi_async_auth_kit.db.mongo_repo import MongoRepo
 
 async def get_repo(config):
     if config.db_type == "mongodb":
