@@ -1,7 +1,7 @@
 [project]
 name = "fastapi-auth"
-version = "0.2.0"
-description = "FastAPI auth with refresh tokens"
+version = "0.1.0"
+description = "Async FastAPI auth with JWT, refresh tokens, logout"
 authors = [{ name="Keyurkumar", email="kmistry1110@gmail.com" }]
 requires-python = ">=3.8"
 
