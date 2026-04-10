@@ -45,7 +45,7 @@ pip install "fastapi-async-auth-kit[sqlite]"
 ### Step 1: How to initiate auth on startup
 ```python
 from fastapi import FastAPI
-from fastapi_auth_ import init_auth, AuthConfig
+from fastapi_async_auth_kit import init_auth, AuthConfig
 
 app = FastAPI()
 
@@ -64,7 +64,7 @@ async def startup():
 ### Step 2: How to validate token for all your FastAPIs
 ```python
 from fastapi import APIRouter, Depends
-from fastapi_auth.dependencies.auth import get_current_user
+from fastapi_async_auth_kit.dependencies.auth import get_current_user
 router = APIRouter()
 
 @router.get("/user")
