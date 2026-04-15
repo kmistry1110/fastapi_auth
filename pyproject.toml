@@ -1,6 +1,6 @@
 [project]
 name = "fastapi-async-auth-kit"
-version = "0.6.0"
+version = "0.8.0"
 description = "Production-ready FastAPI auth system with JWT, refresh tokens, and async DB support"
 readme = "README.md"
 authors = [{ name="Keyurkumar", email="kmistry1110@gmail.com" }]
@@ -20,6 +20,12 @@ postgres = ["asyncpg"]
 mysql = ["aiomysql"]
 sqlite = ["aiosqlite"]
 mongodb = ["motor"]
+
+[project.urls]
+Repository = "https://github.com/kmistry1110/fastapi_auth"
+Issues = "https://github.com/kmistry1110/fastapi_auth/issues"
+Changelog = "https://github.com/kmistry1110/fastapi_auth/blob/main/CHANGELOG.md"
+
 
 [build-system]
 requires = ["setuptools", "wheel"]
