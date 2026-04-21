@@ -1,18 +1,19 @@
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker, declarative_base
 from sqlalchemy import Column, String, Integer, select
+from fastapi_async_auth_kit.schemas.user import UserModel
 
 Base = declarative_base()
 
 class User(Base):
     __tablename__ = "users"
     id = Column(Integer, primary_key=True)
-    username = Column(String, unique=True)
-    password = Column(String)
+    username = Column(String(255), unique=True, index=True)
+    password = Column(String(255))
 
 class Token(Base):
     __tablename__ = "tokens"
-    token = Column(String, primary_key=True)
+    token = Column(String(512), primary_key=True)
     blacklisted = Column(Integer, default=0)
 
 
@@ -30,9 +31,19 @@ class SQLRepo:
             await conn.run_sync(Base.metadata.create_all)
 
     async def get_user(self, username):
-        async with self.Session() as db:
-            res = await db.execute(select(User).where(User.username == username))
-            return res.scalar_one_or_none()
+        result = await self.session.execute(
+            select(User).where(User.username == username)
+        )
+        user = result.scalar_one_or_none()
+
+        if not user:
+            return None
+
+        return UserModel(
+            id=str(user.id),
+            username=user.username,
+            password=user.password
+        )
 
     async def create_user(self, u, p):
         async with self.Session() as db:

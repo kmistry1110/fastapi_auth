@@ -1,23 +1,23 @@
-from passlib.context import CryptContext
+from argon2 import PasswordHasher
+from argon2.exceptions import VerifyMismatchError
 from jose import jwt
 from datetime import datetime, timedelta
 
-pwd = CryptContext(schemes=["argon2"], deprecated="auto")
+ph = PasswordHasher()
 
 ALGO = "HS256"
 
 
 def hash_password(password: str) -> str:
-    return pwd.hash(password)
+    return ph.hash(password)
 
 
 def verify_password(password: str, hashed: str) -> bool:
-    valid = pwd.verify(password, hashed)
-
-    if valid and pwd.needs_update(hashed):
-        new_hash = pwd.hash(password)
-
-    return valid
+    try:
+        ph.verify(hashed, password)
+        return True
+    except VerifyMismatchError:
+        return False
 
 
 def create_token(data, secret, minutes, ttype):

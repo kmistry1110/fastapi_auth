@@ -50,13 +50,47 @@ from fastapi_async_auth_kit import init_auth, AuthConfig
 app = FastAPI()
 
 @app.on_event("startup")
+# for postgres
 async def startup():
     await init_auth(
         app,
         AuthConfig(
             secret_key="your-secret",
-            db_url="postgresql+asyncpg://user:pass@localhost/db",
+            db_url="postgresql+asyncpg://user:pass@localhost/fastapi_auth",
             db_type="postgres"
+        )
+    )
+
+# for mysql
+async def startup():
+    await init_auth(
+        app,
+        AuthConfig(
+            secret_key="secret",
+            db_url="mysql+aiomysql://admin:Admin123@localhost:3306/fastapi_auth",
+            db_type="mysql"
+        )
+    )
+
+# for sqlite
+async def startup():
+    await init_auth(
+        app,
+        AuthConfig(
+            secret_key="my-secret-key",
+            db_url="sqlite+aiosqlite:///./fastapi_auth.db",
+            db_type="sqlite"
+        )
+    )
+
+# for mongo db
+async def startup():
+    await init_auth(
+        app,
+        AuthConfig(
+            secret_key="super-secret-key",
+            db_url="mongodb://localhost:27017/fastapi_auth",
+            db_type="mongodb"
         )
     )
 ```

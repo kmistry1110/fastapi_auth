@@ -1,6 +1,6 @@
 [project]
 name = "fastapi-async-auth-kit"
-version = "0.8.0"
+version = "0.9.0"
 description = "Production-ready FastAPI auth system with JWT, refresh tokens, and async DB support"
 readme = "README.md"
 authors = [{ name="Keyurkumar", email="kmistry1110@gmail.com" }]
